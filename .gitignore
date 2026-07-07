@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+*.log
+
+# Zdrojové/interné podklady, nepublikovať do verejného repozitára
+Info.docx
+Kurzy.docx
+FAQ.docx
+screencapture-valyou-sk-*.pdf
+3286889.jpg

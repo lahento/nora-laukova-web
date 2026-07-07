@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Časté otázky (FAQ): Nora Lauková</title>
+<meta name="description" content="Odpovede na najčastejšie otázky o kurzoch, tréningoch a webinároch Nory Laukovej: registrácia, platba, firemné školenia a viac.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="mark-profile" viewBox="0 0 100 100">
+    <path d="M27,84 C18,68 17,46 27,31 C35,18 52,12 65,19 C74,24 74,34 65,37 C59,39 57,44 62,48 C67,52 64,57 57,57 C52,57 50,60 53,64 C56,68 53,72 47,72 C43,72 41,75 43,78 C45,82 41,87 34,88 C29,89 22,88 27,84 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M33,52 C36,55 41,55 44,52" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="mark-arrow" viewBox="0 0 20 20">
+    <path d="M3,10 L17,10 M11,4 L17,10 L11,16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="mark-bag" viewBox="0 0 24 24">
+    <path d="M6,8 L18,8 L17.2,20 L6.8,20 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9,8 C9,5.2 10.3,3.2 12,3.2 C13.7,3.2 15,5.2 15,8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="mark-close" viewBox="0 0 24 24">
+    <path d="M5,5 L19,19 M19,5 L5,19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="mark-plus" viewBox="0 0 20 20">
+    <path d="M10,3 L10,17 M3,10 L17,10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <svg class="mark"><use href="#mark-profile"/></svg>
+      <span>Nora Lauková<span class="brand-sub">Reč tela &amp; vzťahy</span></span>
+    </a>
+    <nav aria-label="Hlavná navigácia">
+      <ul class="nav-list">
+        <li><a href="index.html#o-mne">O mne</a></li>
+        <li><a href="index.html#venujem-sa">Čomu sa venujem</a></li>
+        <li><a href="produkty.html">Produkty</a></li>
+        <li><a href="o-nas.html">O nás</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="index.html#kontakt" class="btn btn-primary nav-cta">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-trigger" aria-label="Otvoriť košík">
+        <svg class="mark"><use href="#mark-bag"/></svg>
+        <span class="cart-badge" data-cart-count>0</span>
+      </button>
+      <button class="nav-toggle" aria-label="Otvoriť menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="cart-overlay" data-cart-overlay></div>
+<aside class="cart-panel" data-cart-panel aria-label="Košík">
+  <div class="cart-panel-head">
+    <h3>Váš výber</h3>
+    <button class="cart-close" data-cart-close aria-label="Zavrieť košík"><svg><use href="#mark-close"/></svg></button>
+  </div>
+  <div class="cart-items" data-cart-items></div>
+  <div class="cart-panel-foot">
+    <div class="cart-total-row">
+      <span>Spolu</span>
+      <b data-cart-total>0 €</b>
+    </div>
+    <a href="index.html#kontakt" class="btn btn-primary" data-cart-checkout>Odoslať dopyt <svg><use href="#mark-arrow"/></svg></a>
+    <p class="cart-note">Ide o nezáväzný dopyt, nie o platbu online. Po odoslaní vás budeme kontaktovať s podrobnosťami k registrácii a platbe bankovým prevodom.</p>
+  </div>
+</aside>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">FAQ</span>
+      <h1 style="margin-top:1rem;">Časté otázky</h1>
+      <p class="lede">Odpovede na to, čo sa ma pýtate najčastejšie: o kurzoch, registrácii, firemných školeniach aj o tom, čo vám vzdelávanie prinesie.</p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container" style="max-width:820px;">
+      <div class="faq-list" data-reveal>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span><span class="q-index">01</span>Pre koho sú kurzy Nory Laukovej určené?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Kurzy sú určené pre každého, kto chce lepšie porozumieť ľudskému správaniu, neverbálnej komunikácii a budovať zdravšie vzťahy. Sú vhodné pre jednotlivcov, manažérov, podnikateľov, HR špecialistov, pedagógov aj odborníkov pracujúcich s ľuďmi.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span><span class="q-index">02</span>Potrebujem mať predchádzajúce skúsenosti alebo vzdelanie z psychológie?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Nie. Väčšina kurzov je navrhnutá tak, aby boli zrozumiteľné aj pre úplných začiatočníkov. Obsah je postavený na praktických príkladoch a využiteľný v každodennom živote.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span><span class="q-index">03</span>Ako prebieha registrácia na kurz alebo tréning?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Na kurz sa môžete prihlásiť prostredníctvom registračného formulára alebo e-mailu. Po spracovaní prihlášky dostanete informácie o platbe a ďalších organizačných pokynoch.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span><span class="q-index">04</span>Aký je rozdiel medzi webinárom a osobným tréningom?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Webinár prebieha online a môžete sa ho zúčastniť odkiaľkoľvek. Osobné tréningy sú interaktívne stretnutia, počas ktorých sa venuje viac priestoru praktickým cvičeniam, diskusiám a individuálnej práci s účastníkmi.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span><span class="q-index">05</span>Čo sa naučím na kurzoch neverbálnej komunikácie?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Naučíte sa lepšie čítať reč tela, rozpoznávať emócie, odhaľovať nesúlad medzi slovami a správaním, porozumieť neverbálnym signálom a efektívnejšie komunikovať v osobnom aj pracovnom živote.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span><span class="q-index">06</span>Organizujete aj školenia pre firmy?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Áno. Ponúkame školenia a tréningy pre firmy, tímy aj manažérov. Program je možné prispôsobiť konkrétnym potrebám organizácie a zamerať na komunikáciu, leadership, vzťahy na pracovisku alebo neverbálnu komunikáciu.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span><span class="q-index">07</span>Môžem si objednať individuálnu konzultáciu?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Áno. V prípade záujmu o individuálnu spoluprácu alebo odbornú konzultáciu nás kontaktujte prostredníctvom kontaktného formulára alebo e-mailu. Spoločne vyberieme najvhodnejšiu formu spolupráce.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span><span class="q-index">08</span>Dostanem po absolvovaní kurzu certifikát?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Pri vybraných kurzoch alebo vzdelávacích programoch môže byť súčasťou absolvovania potvrdenie alebo certifikát. Informácia je vždy uvedená pri konkrétnom kurze.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span><span class="q-index">09</span>Čo ak sa po registrácii nemôžem zúčastniť?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">V prípade objektívnych dôvodov je možné kurz za stanovených podmienok presunúť na iný termín. Podrobné podmienky nájdete pri registrácii každého kurzu.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span><span class="q-index">10</span>Ako mi môžu tieto kurzy pomôcť v každodennom živote?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Získate praktické zručnosti, ktoré využijete pri komunikácii s partnerom, rodinou, kolegami, klientmi či obchodnými partnermi. Kurzy vám pomôžu lepšie rozumieť ľuďom, rozpoznať manipulatívne správanie, zvládať konflikty a budovať zdravšie vzťahy.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-sand cta-band">
+    <div class="container">
+      <span class="eyebrow" style="justify-content:center;">Neodpovedali sme na všetko?</span>
+      <h2>Napíšte mi priamo</h2>
+      <div class="cta-band-actions">
+        <a href="index.html#kontakt" class="btn btn-primary">Napísať mi <svg><use href="#mark-arrow"/></svg></a>
+        <a href="produkty.html" class="btn btn-outline">Pozrieť kurzy</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg class="mark"><use href="#mark-profile"/></svg>
+          <span>Nora Lauková</span>
+        </div>
+        <p class="footer-tagline">Neverbálna komunikácia, reč tela a psychológia správania pre jednotlivcov aj firmy.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigácia</h4>
+        <ul>
+          <li><a href="index.html#o-mne">O mne</a></li>
+          <li><a href="index.html#venujem-sa">Čomu sa venujem</a></li>
+          <li><a href="produkty.html">Produkty</a></li>
+          <li><a href="o-nas.html">O nás</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Produkty</h4>
+        <ul>
+          <li><a href="produkty.html#top-skola-reci-tela">TOP Škola reči tela®</a></li>
+          <li><a href="produkty.html#stop-manipulacii">Stop manipulácii</a></li>
+          <li><a href="produkty.html">Všetky produkty</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sociálne siete</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/nora.laukova/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/noralaukovaneverbalne/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="index.html#kontakt">Kontaktný formulár</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nora Lauková. Všetky práva vyhradené.</span>
+      <span>ŠKOLA ZDRAVÉ VZŤAHY® a TOP ŠKOLA REČI TELA® sú registrované značky spoločnosti F.A.M.E., s.r.o.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digitálne produkty a kurzy: Nora Lauková</title>
+<meta name="description" content="Kompletný prehľad kurzov, tréningov, webinárov a knihy Nory Laukovej: neverbálna komunikácia, reč tela, manipulácia, sebahodnota a psychológia správania.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="mark-profile" viewBox="0 0 100 100">
+    <path d="M27,84 C18,68 17,46 27,31 C35,18 52,12 65,19 C74,24 74,34 65,37 C59,39 57,44 62,48 C67,52 64,57 57,57 C52,57 50,60 53,64 C56,68 53,72 47,72 C43,72 41,75 43,78 C45,82 41,87 34,88 C29,89 22,88 27,84 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M33,52 C36,55 41,55 44,52" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="mark-arrow" viewBox="0 0 20 20">
+    <path d="M3,10 L17,10 M11,4 L17,10 L11,16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="mark-users" viewBox="0 0 24 24">
+    <path d="M8,11 C10,11 11.5,9.5 11.5,7.5 C11.5,5.5 10,4 8,4 C6,4 4.5,5.5 4.5,7.5 C4.5,9.5 6,11 8,11 Z M2,20 C2,16 4.5,13.5 8,13.5 C11.5,13.5 14,16 14,20 M15,12 C16.7,12 18,10.7 18,9 C18,7.3 16.7,6 15,6 M17,13.5 C19.5,14 21,16 21,19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="mark-bag" viewBox="0 0 24 24">
+    <path d="M6,8 L18,8 L17.2,20 L6.8,20 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9,8 C9,5.2 10.3,3.2 12,3.2 C13.7,3.2 15,5.2 15,8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="mark-close" viewBox="0 0 24 24">
+    <path d="M5,5 L19,19 M19,5 L5,19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="mark-plus" viewBox="0 0 20 20">
+    <path d="M10,3 L10,17 M3,10 L17,10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <svg class="mark"><use href="#mark-profile"/></svg>
+      <span>Nora Lauková<span class="brand-sub">Reč tela &amp; vzťahy</span></span>
+    </a>
+    <nav aria-label="Hlavná navigácia">
+      <ul class="nav-list">
+        <li><a href="index.html#o-mne">O mne</a></li>
+        <li><a href="index.html#venujem-sa">Čomu sa venujem</a></li>
+        <li><a href="produkty.html" class="is-active">Produkty</a></li>
+        <li><a href="o-nas.html">O nás</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="index.html#kontakt" class="btn btn-primary nav-cta">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-trigger" aria-label="Otvoriť košík">
+        <svg class="mark"><use href="#mark-bag"/></svg>
+        <span class="cart-badge" data-cart-count>0</span>
+      </button>
+      <button class="nav-toggle" aria-label="Otvoriť menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="cart-overlay" data-cart-overlay></div>
+<aside class="cart-panel" data-cart-panel aria-label="Košík">
+  <div class="cart-panel-head">
+    <h3>Váš výber</h3>
+    <button class="cart-close" data-cart-close aria-label="Zavrieť košík"><svg><use href="#mark-close"/></svg></button>
+  </div>
+  <div class="cart-items" data-cart-items></div>
+  <div class="cart-panel-foot">
+    <div class="cart-total-row">
+      <span>Spolu</span>
+      <b data-cart-total>0 €</b>
+    </div>
+    <a href="index.html#kontakt" class="btn btn-primary" data-cart-checkout>Odoslať dopyt <svg><use href="#mark-arrow"/></svg></a>
+    <p class="cart-note">Ide o nezáväzný dopyt, nie o platbu online. Po odoslaní vás budeme kontaktovať s podrobnosťami k registrácii a platbe bankovým prevodom.</p>
+  </div>
+</aside>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Digitálne produkty</span>
+      <h1 style="margin-top:1rem;">Kurzy, tréningy<br>a materiály</h1>
+      <p class="lede">Od knihy cez webináre až po komplexný vzdelávací program. Každý produkt vychádza z praktickej skúsenosti s reálnymi príbehmi ľudí a je postavený tak, aby bol zrozumiteľný aj bez predchádzajúceho vzdelania z psychológie.</p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container" style="max-width:980px;">
+
+      <article class="product-row" id="stop-manipulacii" data-reveal>
+        <div class="product-visual">
+          <span class="course-kicker" style="position:absolute; top:1.1rem; left:1.1rem;">Kniha</span>
+          <svg class="mark"><use href="#mark-profile"/></svg>
+          <span class="product-visual-caption">Stop manipulácii</span>
+        </div>
+        <div class="product-copy">
+          <h2>Stop manipulácii</h2>
+          <p>Publikácia zameraná na rozpoznávanie manipulatívneho správania, psychologických hier a obranu voči manipulátorom v osobnom aj pracovnom živote.</p>
+          <h4>Pomôže vám</h4>
+          <ul class="tag-list">
+            <li>Rozpoznať manipuláciu</li>
+            <li>Pochopiť psychológiu manipulátorov</li>
+            <li>Nastaviť zdravé hranice</li>
+            <li>Efektívne reagovať na manipulatívne správanie</li>
+          </ul>
+          <div class="product-footer">
+            <span class="product-price">Slovensko 18,50 € · ČR a Európa 22 € <span style="font-weight:400; color:var(--ink-faint); font-size:.82rem;">(vrátane poštovného)</span></span>
+            <button type="button" class="btn btn-primary cart-add" data-id="stop-manipulacii" data-name="Stop manipulácii" data-price="18.5" data-kicker="Kniha">Pridať do košíka <svg><use href="#mark-plus"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-row is-reverse" id="top-skola-reci-tela" data-reveal>
+        <div class="product-visual is-flagship">
+          <span class="course-kicker" style="position:absolute; top:1.1rem; left:1.1rem;">Vlajkový program</span>
+          <svg class="mark"><use href="#mark-profile"/></svg>
+          <span class="product-visual-caption">TOP Škola reči tela®</span>
+        </div>
+        <div class="product-copy">
+          <h2>TOP Škola reči tela®</h2>
+          <p>Komplexný, viacmodulový vzdelávací program zameraný na detailné štúdium neverbálnej komunikácie. Určený pre jednotlivcov aj profesionálov, ktorí chcú ísť do hĺbky.</p>
+          <h4>Oblasti, ktorým sa venujeme</h4>
+          <ul class="tag-list">
+            <li>Mimika</li>
+            <li>Gestá</li>
+            <li>Postoj tela</li>
+            <li>Očný kontakt</li>
+            <li>Emócie</li>
+            <li>Osobnosť človeka</li>
+            <li>Komunikácia</li>
+          </ul>
+          <div class="product-footer">
+            <span class="product-price tbd">cena na vyžiadanie</span>
+            <button type="button" class="btn btn-primary cart-add" data-id="top-skola-reci-tela" data-name="TOP Škola reči tela®" data-price="" data-kicker="Vlajkový program">Pridať do košíka <svg><use href="#mark-plus"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-row" id="dizajn-osobnosti" data-reveal>
+        <div class="product-visual">
+          <span class="course-kicker" style="position:absolute; top:1.1rem; left:1.1rem;">Osobný tréning</span>
+          <svg class="mark"><use href="#mark-profile"/></svg>
+          <span class="product-visual-caption">Dizajn osobnosti z neverbality®</span>
+        </div>
+        <div class="product-copy">
+          <h2>Dizajn osobnosti z neverbality®</h2>
+          <p>Účastníci sa učia analyzovať osobnosť človeka prostredníctvom neverbálnej komunikácie: mimiky, gest, držania tela a ďalších behaviorálnych prejavov.</p>
+          <h4>Čo sa naučíte</h4>
+          <ul class="tag-list">
+            <li>Lepšie čítať ľudí</li>
+            <li>Rozpoznávať osobnostné črty</li>
+            <li>Správne interpretovať reč tela</li>
+            <li>Odhaliť nesúlad medzi slovami a správaním</li>
+            <li>Efektívnejšie komunikovať</li>
+          </ul>
+          <div class="product-footer">
+            <span class="product-price tbd">cena na vyžiadanie</span>
+            <button type="button" class="btn btn-primary cart-add" data-id="dizajn-osobnosti" data-name="Dizajn osobnosti z neverbality®" data-price="" data-kicker="Osobný tréning">Pridať do košíka <svg><use href="#mark-plus"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-row is-reverse" id="riesenie-rizikovych-situacii" data-reveal>
+        <div class="product-visual">
+          <span class="course-kicker" style="position:absolute; top:1.1rem; left:1.1rem;">Osobný tréning</span>
+          <svg class="mark"><use href="#mark-profile"/></svg>
+          <span class="product-visual-caption">Riešenie rizikových situácií a manipulácie</span>
+        </div>
+        <div class="product-copy">
+          <h2>Riešenie rizikových situácií a manipulácie</h2>
+          <p>Kurz učí rozpoznávať rizikové osoby, manipulatívne techniky a efektívne reagovať v konfliktných alebo nebezpečných situáciách.</p>
+          <h4>Témy</h4>
+          <ul class="tag-list">
+            <li>Manipulácia</li>
+            <li>Psychický nátlak</li>
+            <li>Konfliktná komunikácia</li>
+            <li>Ochrana hraníc</li>
+            <li>Prevencia zneužitia</li>
+          </ul>
+          <div class="product-footer">
+            <span class="product-price tbd">cena na vyžiadanie</span>
+            <button type="button" class="btn btn-primary cart-add" data-id="riesenie-rizikovych-situacii" data-name="Riešenie rizikových situácií a manipulácie" data-price="" data-kicker="Osobný tréning">Pridať do košíka <svg><use href="#mark-plus"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-row" id="perfekcionizmus" data-reveal>
+        <div class="product-visual">
+          <span class="course-kicker" style="position:absolute; top:1.1rem; left:1.1rem;">Webinár</span>
+          <svg class="mark"><use href="#mark-profile"/></svg>
+          <span class="product-visual-caption">Perfekcionizmus: Ako (ne)byť perfektný</span>
+        </div>
+        <div class="product-copy">
+          <h2>Perfekcionizmus: Ako (ne)byť perfektný</h2>
+          <p>Kurz vysvetľuje, ako perfekcionizmus ovplyvňuje psychiku, výkon, vzťahy a spokojnosť človeka, a ako k výkonu pristupovať zdravším spôsobom.</p>
+          <h4>Získate</h4>
+          <ul class="tag-list">
+            <li>Lepšie pochopenie perfekcionizmu</li>
+            <li>Praktické techniky na zníženie tlaku na seba</li>
+            <li>Zdravší prístup k výkonu</li>
+            <li>Vyššiu psychickú pohodu</li>
+          </ul>
+          <div class="product-footer">
+            <span class="product-price tbd">cena na vyžiadanie</span>
+            <button type="button" class="btn btn-primary cart-add" data-id="perfekcionizmus" data-name="Perfekcionizmus: Ako (ne)byť perfektný" data-price="" data-kicker="Webinár">Pridať do košíka <svg><use href="#mark-plus"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-row is-reverse" id="nebezpecne-osobnosti" data-reveal>
+        <div class="product-visual">
+          <span class="course-kicker" style="position:absolute; top:1.1rem; left:1.1rem;">Tréning</span>
+          <svg class="mark"><use href="#mark-profile"/></svg>
+          <span class="product-visual-caption">Nebezpečné osobnosti</span>
+        </div>
+        <div class="product-copy">
+          <h2>Nebezpečné osobnosti</h2>
+          <p>Kurz učí identifikovať rizikové typy osobností ešte predtým, ako spôsobia škody vo vzťahoch alebo v pracovnom prostredí.</p>
+          <h4>Témy</h4>
+          <ul class="tag-list">
+            <li>Narcizmus</li>
+            <li>Manipulácia</li>
+            <li>Toxické správanie</li>
+            <li>Psychopatické črty</li>
+            <li>Sociopatické správanie</li>
+          </ul>
+          <div class="product-footer">
+            <span class="product-price tbd">cena na vyžiadanie</span>
+            <button type="button" class="btn btn-primary cart-add" data-id="nebezpecne-osobnosti" data-name="Nebezpečné osobnosti" data-price="" data-kicker="Tréning">Pridať do košíka <svg><use href="#mark-plus"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-row" id="ako-zvladat-hnev" data-reveal>
+        <div class="product-visual">
+          <span class="course-kicker" style="position:absolute; top:1.1rem; left:1.1rem;">Tréning</span>
+          <svg class="mark"><use href="#mark-profile"/></svg>
+          <span class="product-visual-caption">Ako zvládať hnev</span>
+        </div>
+        <div class="product-copy">
+          <h2>Ako zvládať hnev</h2>
+          <p>Praktický tréning na pochopenie vzniku hnevu a jeho zvládanie zdravým spôsobom.</p>
+          <h4>Témy</h4>
+          <ul class="tag-list">
+            <li>Emócie</li>
+            <li>Konflikty</li>
+            <li>Zvládanie impulzov</li>
+            <li>Komunikácia počas konfliktu</li>
+            <li>Sebakontrola</li>
+          </ul>
+          <div class="product-footer">
+            <span class="product-price tbd">cena na vyžiadanie</span>
+            <button type="button" class="btn btn-primary cart-add" data-id="ako-zvladat-hnev" data-name="Ako zvládať hnev" data-price="" data-kicker="Tréning">Pridať do košíka <svg><use href="#mark-plus"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-row is-reverse" id="psychopati-medzi-nami" data-reveal>
+        <div class="product-visual">
+          <span class="course-kicker" style="position:absolute; top:1.1rem; left:1.1rem;">Tréning</span>
+          <svg class="mark"><use href="#mark-profile"/></svg>
+          <span class="product-visual-caption">Psychopati medzi nami</span>
+        </div>
+        <div class="product-copy">
+          <h2>Psychopati medzi nami</h2>
+          <p>Kurz vysvetľuje psychopatické správanie v každodennom živote, vo vzťahoch aj v pracovnom prostredí.</p>
+          <h4>Naučíte sa</h4>
+          <ul class="tag-list">
+            <li>Rozpoznať psychopatické črty</li>
+            <li>Identifikovať varovné signály</li>
+            <li>Chrániť sa pred manipuláciou</li>
+            <li>Správne reagovať</li>
+          </ul>
+          <div class="product-footer">
+            <span class="product-price tbd">cena na vyžiadanie</span>
+            <button type="button" class="btn btn-primary cart-add" data-id="psychopati-medzi-nami" data-name="Psychopati medzi nami" data-price="" data-kicker="Tréning">Pridať do košíka <svg><use href="#mark-plus"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-row" id="psychicka-odolnost" data-reveal>
+        <div class="product-visual">
+          <span class="course-kicker" style="position:absolute; top:1.1rem; left:1.1rem;">Tréning</span>
+          <svg class="mark"><use href="#mark-profile"/></svg>
+          <span class="product-visual-caption">Psychická odolnosť a zvládanie stresu</span>
+        </div>
+        <div class="product-copy">
+          <h2>Psychická odolnosť a zvládanie stresu z pohľadu neurovedy</h2>
+          <p>Program prepája poznatky neurovedy, psychológie a praktických techník zvládania stresu.</p>
+          <h4>Témy</h4>
+          <ul class="tag-list">
+            <li>Stres</li>
+            <li>Mozog</li>
+            <li>Psychická odolnosť</li>
+            <li>Regenerácia</li>
+            <li>Výkonnosť</li>
+          </ul>
+          <div class="product-footer">
+            <span class="product-price tbd">cena na vyžiadanie</span>
+            <button type="button" class="btn btn-primary cart-add" data-id="psychicka-odolnost" data-name="Psychická odolnosť a zvládanie stresu z pohľadu neurovedy" data-price="" data-kicker="Tréning">Pridať do košíka <svg><use href="#mark-plus"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-row is-reverse" id="ego-a-jeho-pasce" data-reveal>
+        <div class="product-visual">
+          <span class="course-kicker" style="position:absolute; top:1.1rem; left:1.1rem;">Tréning</span>
+          <svg class="mark"><use href="#mark-profile"/></svg>
+          <span class="product-visual-caption">Ego a jeho pasce</span>
+        </div>
+        <div class="product-copy">
+          <h2>Ego a jeho pasce</h2>
+          <p>Kurz pomáha pochopiť fungovanie ega, jeho vplyv na medziľudské vzťahy a rozhodovanie.</p>
+          <h4>Témy</h4>
+          <ul class="tag-list">
+            <li>Ego</li>
+            <li>Sebareflexia</li>
+            <li>Konflikty</li>
+            <li>Osobnostný rast</li>
+            <li>Vzťahy</li>
+          </ul>
+          <div class="product-footer">
+            <span class="product-price tbd">cena na vyžiadanie</span>
+            <button type="button" class="btn btn-primary cart-add" data-id="ego-a-jeho-pasce" data-name="Ego a jeho pasce" data-price="" data-kicker="Tréning">Pridať do košíka <svg><use href="#mark-plus"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section bg-sand">
+    <div class="container">
+      <div class="org-note" data-reveal>
+        <svg class="mark"><use href="#mark-users"/></svg>
+        <p><strong>Forma:</strong> osobné tréningy, workshopy, webináre a viacmodulové vzdelávacie programy. <strong>Organizátor:</strong> F.A.M.E., s.r.o. <strong>Registrácia</strong> prebieha prostredníctvom formulára alebo e-mailom (meno, priezvisko, adresa, PSČ, mesto, telefónne číslo). <strong>Platba</strong> prebieha bankovým prevodom, registrácia je potvrdená po jej prijatí. Organizátor si vyhradzuje právo zmeniť termín alebo kurz neotvoriť pri nízkom počte účastníkov; presun je z objektívnych dôvodov možný len raz. Všetky kurzy, webináre a materiály podliehajú autorským právam. Názvy <strong>ŠKOLA ZDRAVÉ VZŤAHY®</strong> a <strong>TOP ŠKOLA REČI TELA®</strong> sú registrované značky spoločnosti F.A.M.E., s.r.o.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white cta-band">
+    <div class="container">
+      <span class="eyebrow" style="justify-content:center;">Neviete si vybrať?</span>
+      <h2>Napíšte mi, poradím vám</h2>
+      <div class="cta-band-actions">
+        <a href="index.html#kontakt" class="btn btn-primary">Napísať mi <svg><use href="#mark-arrow"/></svg></a>
+        <a href="faq.html" class="btn btn-outline">Časté otázky</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg class="mark"><use href="#mark-profile"/></svg>
+          <span>Nora Lauková</span>
+        </div>
+        <p class="footer-tagline">Neverbálna komunikácia, reč tela a psychológia správania pre jednotlivcov aj firmy.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigácia</h4>
+        <ul>
+          <li><a href="index.html#o-mne">O mne</a></li>
+          <li><a href="index.html#venujem-sa">Čomu sa venujem</a></li>
+          <li><a href="produkty.html">Produkty</a></li>
+          <li><a href="o-nas.html">O nás</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Produkty</h4>
+        <ul>
+          <li><a href="produkty.html#top-skola-reci-tela">TOP Škola reči tela®</a></li>
+          <li><a href="produkty.html#stop-manipulacii">Stop manipulácii</a></li>
+          <li><a href="produkty.html">Všetky produkty</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sociálne siete</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/nora.laukova/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/noralaukovaneverbalne/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="index.html#kontakt">Kontaktný formulár</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nora Lauková. Všetky práva vyhradené.</span>
+      <span>ŠKOLA ZDRAVÉ VZŤAHY® a TOP ŠKOLA REČI TELA® sú registrované značky spoločnosti F.A.M.E., s.r.o.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

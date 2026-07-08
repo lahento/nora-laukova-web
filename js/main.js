@@ -11,6 +11,61 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
+  /* ---------- custom cursor (desktop, fine pointer, no reduced-motion) ---------- */
+  var wantsCustomCursor = window.matchMedia &&
+    window.matchMedia('(pointer: fine)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (wantsCustomCursor) {
+    var dot = document.createElement('div');
+    dot.className = 'cursor-dot';
+    var outline = document.createElement('div');
+    outline.className = 'cursor-dot-outline';
+    document.body.appendChild(dot);
+    document.body.appendChild(outline);
+
+    var mouseX = 0, mouseY = 0, outlineX = 0, outlineY = 0;
+    var cursorStarted = false;
+
+    document.addEventListener('mousemove', function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.left = mouseX + 'px';
+      dot.style.top = mouseY + 'px';
+      if (!cursorStarted) {
+        cursorStarted = true;
+        document.body.classList.add('has-custom-cursor');
+        outlineX = mouseX;
+        outlineY = mouseY;
+      }
+    });
+
+    var trailOutline = function () {
+      outlineX += (mouseX - outlineX) / 7;
+      outlineY += (mouseY - outlineY) / 7;
+      outline.style.left = outlineX + 'px';
+      outline.style.top = outlineY + 'px';
+      requestAnimationFrame(trailOutline);
+    };
+    requestAnimationFrame(trailOutline);
+
+    document.addEventListener('mouseleave', function () { document.body.classList.remove('has-custom-cursor'); });
+    document.addEventListener('mouseenter', function () { if (cursorStarted) document.body.classList.add('has-custom-cursor'); });
+
+    document.addEventListener('mouseover', function (e) {
+      if (e.target.closest('a, button')) {
+        dot.classList.add('is-active');
+        outline.classList.add('is-active');
+      }
+    });
+    document.addEventListener('mouseout', function (e) {
+      if (e.target.closest('a, button')) {
+        dot.classList.remove('is-active');
+        outline.classList.remove('is-active');
+      }
+    });
+  }
+
   /* ---------- mobile nav ---------- */
   var toggle = document.querySelector('.nav-toggle');
   var navList = document.querySelector('.nav-list');
@@ -77,6 +132,42 @@ document.addEventListener('DOMContentLoaded', function () {
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* ---------- count-up stats ---------- */
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var counters = document.querySelectorAll('[data-count-to]');
+  if (counters.length) {
+    var runCounter = function (el) {
+      var target = parseInt(el.getAttribute('data-count-to'), 10);
+      if (reduceMotion || !target) {
+        el.textContent = target + '+';
+        return;
+      }
+      var start = null;
+      var duration = 1400;
+      var step = function (timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target) + '+';
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    if ('IntersectionObserver' in window) {
+      var counterIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            runCounter(entry.target);
+            counterIo.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(function (el) { counterIo.observe(el); });
+    } else {
+      counters.forEach(runCounter);
+    }
   }
 
   /* ---------- FAQ accordion ---------- */

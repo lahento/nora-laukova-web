@@ -236,7 +236,7 @@ h3, .h3{
 .nav-list a:hover, .nav-list a.is-active{ color:var(--terracotta); }
 .nav-list a.btn-primary,
 .nav-list a.btn-primary:hover,
-.nav-list a.btn-primary.is-active{ color:var(--cream); }
+.nav-list a.btn-primary.is-active{ color:var(--cream); padding:.75rem 1.4rem; }
 .nav-list a::after{
   content:"";
   position:absolute; left:0; right:100%; bottom:-2px;
